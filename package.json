@@ -1,0 +1,12 @@
+{
+  "name": "MTSondages",
+  "version": "1.0.0",
+  "description": "Projet Bot Discord - Sondages automatiques.",
+  "main": "main.js",
+  "repository": "https://github.com/MasterTech-Dev/mtsondages-bots.git",
+  "author": "MasterTech <mastertech.officiel@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "discordjs/discord.js"
+  }
+}
