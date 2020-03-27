@@ -1,13 +1,15 @@
-const { Client } = require('discord.js');
-const client = new Client({ disableMentions: 'everyone' });
+const { Client } = require('discord.js'); // Load discord client library
+const { TOKEN, PREFIX } = require('./config.js'); // Load configuration file
+const client = new Client({ disableMentions: 'everyone' }); // Load client & disable all mentions '@everyone'
 
+// When the bot start:
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}`);
+  console.log(`Logged in as ${client.user.tag}`); // Send a message log in the console
 });
 
+// When any user send a message in a discord channel:
 client.on('message', msg => {
-  if (msg.content === "everyone") msg.channel.send("@everyone, Salut à tous ;)", { disableMentions: 'none' });
-  if (msg.content === "noteveryone") msg.channel.send("@everyone (noteveryone), Salut à tous");
+  if (msg.content.startsWith(`${PREFIX}ping`)) msg.channel.send('Pong');
 });
 
-client.login('NjkzMTc5NDU0NjM3MzQyODkx.Xn5T0g.j2XpJGmZq2enbkuekBzhLBTwMaQ');
+client.login(TOKEN); // Connect the bot to our discord server (guild)
